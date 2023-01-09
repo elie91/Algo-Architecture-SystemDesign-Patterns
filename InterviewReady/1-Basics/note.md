@@ -1,50 +1,52 @@
 # System Design
 
-# Distributed System
+# Table of contents
+- [System Design](#system-design)
+- [Table of contents](#table-of-contents)
+- [Horizontal VS Vertical Scaling ](#horizontal-vs-vertical-scaling-)
+  - [Vertical Scaling](#vertical-scaling)
+  - [Horizontal Scaling](#horizontal-scaling)
+- [Distributed System ](#distributed-system-)
+- [Resilient System ](#resilient-system-)
+- [Consistent System ](#consistent-system-)
+- [Microservices ](#microservices-)
+- [Monolith VS Microservices  ](#monolith-vs-microservices--)
+  - [Monolith](#monolith)
+  - [Microservices](#microservices)
+- [Load Balancing ](#load-balancing-)
+  - [Definition](#definition)
+  - [Algorithms](#algorithms)
+  - [Benefits](#benefits)
+  - [Issues](#issues)
+- [Sharding ](#sharding-)
+  - [Defintion](#defintion)
+  - [Steps](#steps)
+  - [Benefits](#benefits-1)
+  - [Issues](#issues-1)
 
-1 - `Vertical Scaling` => Optimise process and increase the output with the same resource 
+# Horizontal VS Vertical Scaling <a name="horizontal-vs-vertical"></a>
 
-2 - `Preprocessing` => Preparing before at non pick hours (Cron Job)
+`Scaling` is the process of increasing the capacity or performance of a system to meet increasing demand. There are two main approaches to scaling: horizontal scaling and vertical scaling.
 
-3 - `Resilience` 
-=> Keep Backups and avoid single point of failure (Master - Slave architecture)
+`Horizontal scaling` involves adding more machines or servers to the system, each of which can handle a portion of the workload. This allows the system to scale out and handle more traffic or requests by distributing the workload across multiple machines. For example, if a website is receiving a lot of traffic, horizontal scaling could involve adding more web servers to the system to handle the increased traffic.
 
-4 - `Horizontal Scaling` => Add more resources
+`Vertical scaling`, on the other hand, involves increasing the capacity of a single machine or server. This could involve adding more CPU, memory, or storage to the machine, or upgrading to a more powerful machine. Vertical scaling allows the system to scale up and handle more traffic or requests by increasing the capacity of a single machine.
 
-5 - `Micro services` => Separe resources and define their responsabilities 
-
-6 - `Distributed System` , `Partitioning`=> Duplicate the system on a different place, communication between systems, route the request to the closest system to get quick responses
-
-7 - `Load Balancing` 
-
-8 - `Decoupling` 
-
-9 - `Logging and metrics` => (Analytics, Auditing, Reporting, Machine Learning)
-
-10 - `Extensibility` 
-
-
-
-# Horizontal VS Vertical Scaling
-
-Scalibility
-
-1 - `Vertical Scaling` 
+## Vertical Scaling
 * Buy bigger machines
 * `+` No load balancing required
-* `-` Single point of failure if the machine down
 * `+` Internal process communication (Fast)
 * `+` Consistent
 * `-` Hardware limit
+* `-` Single point of failure if the machine down
 
-2 - `Horizontal Scaling`
+## Horizontal Scaling
 
 * Buy more machines
-* `-` Load Balancing is required
 * `+` Resilient, No single point of failure
-* `-` Network calls between machines (RPC: Remote Protocol Communication) (Slow)
+* `+` Can scale more easily and quickly than vertical scaling
+* `-` Load Balancing is required
 * `-` Data inconsistency
-* `+` Scales as users increase
 
 Initialy go for vertical, then as users increase, go to horizontal, with benefits of vertical (Consistency and internal process communication)
 
@@ -53,9 +55,74 @@ Considerations when designing a system
 * Is it resilient
 * Is it consistent
 
-# Monolith VS Microservices
+# Distributed System <a name="distributed"></a>
 
-* `Monolith` 
+A distributed system is a network of computers that work together to provide a single service or solve a common problem. In a distributed system, each computer in the network operates as a separate entity, and the system as a whole is designed to be decentralized, meaning that no single computer has complete control over the system.
+
+There are several key characteristics of distributed systems, including:
+
+* `Decentralization`: As mentioned, distributed systems are decentralized, meaning that no single computer has complete control over the system.
+
+* `Concurrency`: Distributed systems are designed to allow multiple computers to work on a common task concurrently.
+
+* `Scalability`: Distributed systems are often designed to be scalable, meaning that they can be easily expanded by adding more computers to the network as needed.
+
+* `Fault tolerance`: Because distributed systems are decentralized, they are often more resistant to failures than centralized systems. If one computer in the network fails, the others can continue to operate and provide the service.
+
+* `Transparency`: Distributed systems are designed to be transparent, meaning that users and applications should not be aware of the details of the system's underlying architecture.
+
+Distributed systems are often used to provide services that require high availability, scalability, and performance, such as web services and cloud computing platforms.
+
+
+# Resilient System <a name="resilient"></a>
+
+A resilient system is a system that is able to withstand and recover from failures, disruptions, or other adverse conditions. Resilient systems are designed to be robust and flexible, and they are able to adapt to changing conditions and continue to function in the face of challenges.
+
+There are several key characteristics of resilient systems, including:
+
+* `Redundancy`: Resilient systems often incorporate redundant components or resources, which can take over if a primary component fails. This helps to ensure that the system can continue to function even if one or more components fail.
+
+* `Fault tolerance`: Resilient systems are designed to be tolerant of faults or errors, and they are able to continue to operate even if some components are not functioning properly.
+
+* `Scalability`: Resilient systems are often designed to be scalable, meaning that they can easily be expanded or contracted to meet changing demand.
+
+* `Adaptability`: Resilient systems are able to adapt to changing conditions and continue to function effectively. This may involve the ability to reconfigure resources or change the way the system operates in response to changing conditions.
+
+* `Monitoring and feedback`: Resilient systems often include monitoring and feedback mechanisms that allow them to detect problems and respond to them in a timely manner.
+
+Resilient systems are important in a variety of contexts, including critical infrastructure, military operations, and commercial enterprises, where the ability to maintain operation in the face of adverse conditions is essential.
+
+# Consistent System <a name="consistent"></a>
+
+A consistent system is one that operates in a predictable and reliable manner, producing the same results for a given set of inputs regardless of when or how those inputs are provided.
+
+A consistent system is focused on maintaining predictable and reliable behavior, even if this means sacrificing some level of flexibility or adaptability.
+
+There are several concepts that can be applied when setting up a consistent system:
+
+* ` Define clear requirements and constraints`: It is important to clearly define the requirements and constraints for the system in order to establish a consistent and predictable behavior. This includes defining input and output formats, as well as any rules or constraints that the system must follow.
+
+* `Use consistent data structures`: Using consistent data structures, such as well-defined schemas or standardized APIs, can help to ensure that the system is able to process and handle data in a consistent manner.
+
+* `Test and validate the system`: Testing and validating the system can help to identify and fix any inconsistencies or bugs that may impact the system's behavior.
+
+* `Monitor and maintain the system`: Regular monitoring and maintenance of the system can help to identify and fix any issues that may arise over time, ensuring that the system remains consistent and reliable.
+
+* `Use error handling and recovery mechanisms`: Implementing error handling and recovery mechanisms can help to ensure that the system is able to handle unexpected events or failures in a consistent and predictable manner, minimizing the impact of these events on the overall system.
+
+* `Use version control and documentation`: Using version control and documentation can help to ensure that changes to the system are tracked and understood, which can help to maintain consistency over time.
+
+# Microservices <a name="microservices"></a>
+
+A microservices architecture is a type of distributed system.
+
+In a microservices architecture, a system is broken down into a collection of smaller, independent services that communicate with each other over a network. Each service is designed to be self-contained and to perform a specific task or set of tasks, and the services are typically developed and deployed independently of each other.
+
+Because a microservices architecture consists of multiple, independent services that communicate over a network, it is considered to be a type of distributed system. Like other distributed systems, microservices architectures are designed to be decentralized, scalable, and fault tolerant, and they often provide benefits such as increased flexibility and the ability to more easily evolve and update individual components of the system.
+
+# Monolith VS Microservices  <a name="monolith-vs-microservices"></a>
+
+## Monolith
   * All fonctionnalities of the app in one program
   * Can be horizontal scaled on multiple machines
   * `+` Less complex, good for small teams
@@ -67,7 +134,7 @@ Considerations when designing a system
   * `-` Single point of failure
   
 
-* `Microservices` 
+## Microservices
   * Fonctionalites are separated on different programs
   * Client talk to a API Gateway that redirect to the concerned service
   * `+` Scalibility
@@ -75,7 +142,7 @@ Considerations when designing a system
   * `+` Working in parallel
   * `-` Need skilled architects
   
-# Load Balancing
+# Load Balancing <a name="load-balancing"></a>
 
 ## Definition
 Load balancing is the process of distributing network traffic across multiple servers or devices to ensure that no single device is overwhelmed by the traffic. 
@@ -100,8 +167,35 @@ Here are a few more examples of load balancing algorithms:
 
 * `Random`: This algorithm randomly selects a server or device to handle each request. This can be useful in situations where the servers or devices have roughly the same capacity and there is no need to explicitly balance the load.
 
+## Benefits
 
-# Sharding
+ It can have several benefits, including:
+
+1. `Improved performance`: By distributing workloads across multiple resources, load balancing can help to reduce the strain on any single resource and improve the overall performance of the system.
+
+2. `Increased reliability`: By using multiple resources to handle requests, load balancing can increase the overall reliability of the system. If one resource becomes unavailable, the workload can be shifted to other resources to ensure that the system remains operational.
+
+3. `Better resource utilization`: Load balancing can help to ensure that all available resources are used efficiently, resulting in better resource utilization and potentially lower costs.
+
+4. `Flexibility`: Load balancing can make it easier to scale a system up or down to meet changing demand, as workloads can be easily redistributed across resources.
+
+5. `High availability`: Load balancing can help to ensure that a system remains available even if one or more of the underlying resources fail, as requests can be redirected to other resources.
+
+## Issues
+
+1. `Complexity`: Implementing load balancing can add complexity to a system, as it requires the use of additional software or hardware to distribute workloads and manage the allocation of resources.
+
+2. `Overhead`: Load balancing introduces additional overhead, as it requires the use of additional resources to manage the distribution of workloads. This can result in reduced performance in some cases.
+
+3. `Cost`: Depending on the scale of the system and the load balancing solution being used, the cost of implementing load balancing can be significant.
+
+4. `Single points of failure`: If the load balancing solution itself becomes unavailable, it can create a single point of failure that affects the entire system.
+
+5. `Compatibility issues`: In some cases, load balancing solutions may not be compatible with certain types of software or hardware, which can limit their use.
+
+6. `Difficulty in monitoring and debugging`: Load balancing can make it more difficult to monitor and debug issues within a system, as requests may be distributed across multiple resources and it may be difficult to identify the source of problems.
+
+# Sharding <a name="sharding"></a>
 
 ## Defintion
 
