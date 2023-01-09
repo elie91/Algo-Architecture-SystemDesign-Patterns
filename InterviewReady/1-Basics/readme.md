@@ -9,6 +9,8 @@
 - [Distributed System ](#distributed-system-)
 - [Resilient System ](#resilient-system-)
 - [Consistent System ](#consistent-system-)
+- [Reliable System ](#reliable-system-)
+- [Master-Slave Architecture ](#master-slave-architecture-)
 - [Microservices ](#microservices-)
 - [Monolith VS Microservices  ](#monolith-vs-microservices--)
   - [Monolith](#monolith)
@@ -111,6 +113,48 @@ There are several concepts that can be applied when setting up a consistent syst
 * `Use error handling and recovery mechanisms`: Implementing error handling and recovery mechanisms can help to ensure that the system is able to handle unexpected events or failures in a consistent and predictable manner, minimizing the impact of these events on the overall system.
 
 * `Use version control and documentation`: Using version control and documentation can help to ensure that changes to the system are tracked and understood, which can help to maintain consistency over time.
+
+# Reliable System <a name="reliable"></a>
+
+In the context of systems design, a reliable system is one that can be trusted to perform its intended functions correctly and consistently. A reliable system should be able to handle a variety of inputs and workloads, and should produce accurate and consistent results. It should also be able to withstand failures or disruptions, and should be able to recover from them in a controlled and predictable manner.
+
+There are several factors that can contribute to the reliability of a system, including:
+
+* `Robust design`: A well-designed system is more likely to be reliable, as it will be able to handle a variety of inputs and workloads without breaking down or producing incorrect results.
+
+* `High quality components`: Using high quality components can help to ensure that the system is less likely to fail or produce incorrect results.
+
+* `Error handling and recovery mechanisms`: Implementing error handling and recovery mechanisms can help to ensure that the system is able to handle failures or disruptions in a controlled and predictable manner, minimizing the impact on the overall system.
+
+* `Testing and validation`: Thoroughly testing and validating the system can help to identify and fix any issues that could impact its reliability.
+
+* `Regular maintenance`: Regular maintenance and monitoring of the system can help to identify and fix any issues that may arise over time, helping to maintain its reliability.
+
+Reliability is an important property of any system, as it allows users to trust the system and have confidence in its results. Ensuring the reliability of a system is an important consideration in systems design.
+
+`Reliability` and `consistency` are similar, but not identical, concepts. In the context of systems design, reliability refers to the ability of a system to perform its intended functions correctly and consistently over time. A reliable system should be able to handle a variety of inputs and workloads, and should produce accurate and consistent results. It should also be able to withstand failures or disruptions, and should be able to recover from them in a controlled and predictable manner.
+
+Consistency, on the other hand, refers to the predictability and uniformity of a system's behavior. A consistent system is one that produces the same results for a given set of inputs, regardless of when or how those inputs are provided. 
+
+Consistency is an important property of any system, as it allows users to trust the system and have confidence in its results.
+
+While consistency is a key factor in determining the reliability of a system, it is not the only factor. A system can be consistent, but not necessarily reliable, if it produces incorrect or inconsistent results. On the other hand, a reliable system should also be consistent, as it should produce the same results for a given set of inputs.
+
+# Master-Slave Architecture <a name='master-slave'></a>
+
+In a master-slave architecture, one machine or server (the master) is responsible for controlling and coordinating the work of one or more other machines or servers (the slaves). The master and slave systems are typically connected in a network, and the slaves are responsible for executing tasks and processing data as directed by the master.
+
+One common use case for a master-slave architecture is in `distributed systems`, where the master is responsible for distributing tasks or data to the slaves for processing. The slaves then execute the tasks and return the results to the master, which can then aggregate the results and provide them to the client.
+
+Master-slave architectures can provide several benefits, including:
+
+* `Improved performance`: By distributing the workload across multiple machines, a master-slave architecture can improve the overall performance of the system.
+
+* `High availability`: If one of the slaves fails, the master can redirect the workload to another slave, helping to ensure that the system remains available and operational.
+
+* `Ease of management`: The master can be used to manage and coordinate the work of the slaves, which can make the overall system easier to manage.
+
+However, there are also some potential drawbacks to using a master-slave architecture. For example, the system may be more vulnerable to failure if the master machine goes down, and it can be more complex to design and manage a system with multiple machines.
 
 # Microservices <a name="microservices"></a>
 
