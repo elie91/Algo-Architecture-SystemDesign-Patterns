@@ -1,8 +1,7 @@
-# System Design
 
 # Table of contents
-- [System Design](#system-design)
 - [Table of contents](#table-of-contents)
+- [System Design](#system-design)
 - [Horizontal VS Vertical Scaling ](#horizontal-vs-vertical-scaling-)
   - [Vertical Scaling](#vertical-scaling)
   - [Horizontal Scaling](#horizontal-scaling)
@@ -25,6 +24,24 @@
   - [Steps](#steps)
   - [Benefits](#benefits-1)
   - [Issues](#issues-1)
+
+
+# System Design
+
+
+System design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements. It is a broad and iterative process that involves a range of stakeholders, including users, business analysts, system architects, and engineers. The goal of system design is to develop a system that is cost-effective, maintainable, and scalable, while also meeting the needs of the users.
+
+There are several steps involved in system design, including:
+
+* `Requirements gathering`: Identifying and documenting the requirements of the system, including functional and non-functional requirements.
+* `Conceptual design`: Creating a high-level design of the system, including the overall architecture and major components.
+* `Logical design`: Defining the detailed functional and data requirements of the system.
+* `Physical design`: Translating the logical design into a physical design, including selecting hardware and software components and specifying the interfaces between them.
+* `Implementation`: Building the system according to the physical design.
+* `Maintenance and evolution`: Continuously updating the system to meet changing requirements and address any issues that arise.
+It is important to note that, system design is also can be done for non-IT systems, such as mechanical systems, electrical systems, and civil infrastructure systems etc.
+
+In modern industry, a system design engineer, who is mainly responsible for designing systems and ensure the system will meet the requirement and perform the function it was intended for, the engineers who have skills in system design have a great impact on the industry and are sought-after
 
 # Horizontal VS Vertical Scaling <a name="horizontal-vs-vertical"></a>
 
