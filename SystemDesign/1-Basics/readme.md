@@ -173,6 +173,7 @@ Master-slave architectures can provide several benefits, including:
 
 However, there are also some potential drawbacks to using a master-slave architecture. For example, the system may be more vulnerable to failure if the master machine goes down, and it can be more complex to design and manage a system with multiple machines.
 
+
 # Microservices <a name="microservices"></a>
 
 A microservices architecture is a type of distributed system.
