@@ -1,7 +1,7 @@
 
 # Table of contents
 - [Table of contents](#table-of-contents)
-- [Unit Tests](#unit-tests)
+- [WhatsApp Design](#whatsapp-design)
 
 
-# Unit Tests
+# WhatsApp Design

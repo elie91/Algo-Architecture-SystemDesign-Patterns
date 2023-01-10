@@ -2,24 +2,24 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
 - [System Design](#system-design)
-- [Horizontal VS Vertical Scaling ](#horizontal-vs-vertical-scaling-)
+- [Horizontal VS Vertical Scaling](#horizontal-vs-vertical-scaling)
   - [Vertical Scaling](#vertical-scaling)
   - [Horizontal Scaling](#horizontal-scaling)
-- [Distributed System ](#distributed-system-)
-- [Resilient System ](#resilient-system-)
-- [Consistent System ](#consistent-system-)
-- [Reliable System ](#reliable-system-)
-- [Master-Slave Architecture ](#master-slave-architecture-)
-- [Microservices ](#microservices-)
-- [Monolith VS Microservices  ](#monolith-vs-microservices--)
+- [Distributed System](#distributed-system)
+- [Resilient System](#resilient-system)
+- [Consistent System](#consistent-system)
+- [Reliable System](#reliable-system)
+- [Master-Slave Architecture](#master-slave-architecture)
+- [Microservices](#microservices)
+- [Monolith VS Microservices](#monolith-vs-microservices)
   - [Monolith](#monolith)
-  - [Microservices](#microservices)
-- [Load Balancing ](#load-balancing-)
+  - [Microservices](#microservices-1)
+- [Load Balancing](#load-balancing)
   - [Definition](#definition)
   - [Algorithms](#algorithms)
   - [Benefits](#benefits)
   - [Issues](#issues)
-- [Sharding ](#sharding-)
+- [Sharding](#sharding)
   - [Defintion](#defintion)
   - [Steps](#steps)
   - [Benefits](#benefits-1)
@@ -43,7 +43,7 @@ It is important to note that, system design is also can be done for non-IT syste
 
 In modern industry, a system design engineer, who is mainly responsible for designing systems and ensure the system will meet the requirement and perform the function it was intended for, the engineers who have skills in system design have a great impact on the industry and are sought-after
 
-# Horizontal VS Vertical Scaling <a name="horizontal-vs-vertical"></a>
+# Horizontal VS Vertical Scaling 
 
 `Scaling` is the process of increasing the capacity or performance of a system to meet increasing demand. There are two main approaches to scaling: horizontal scaling and vertical scaling.
 
@@ -74,7 +74,7 @@ Considerations when designing a system
 * Is it resilient
 * Is it consistent
 
-# Distributed System <a name="distributed"></a>
+# Distributed System 
 
 A distributed system is a network of computers that work together to provide a single service or solve a common problem. In a distributed system, each computer in the network operates as a separate entity, and the system as a whole is designed to be decentralized, meaning that no single computer has complete control over the system.
 
@@ -93,7 +93,7 @@ There are several key characteristics of distributed systems, including:
 Distributed systems are often used to provide services that require high availability, scalability, and performance, such as web services and cloud computing platforms.
 
 
-# Resilient System <a name="resilient"></a>
+# Resilient System 
 
 A resilient system is a system that is able to withstand and recover from failures, disruptions, or other adverse conditions. Resilient systems are designed to be robust and flexible, and they are able to adapt to changing conditions and continue to function in the face of challenges.
 
@@ -111,7 +111,7 @@ There are several key characteristics of resilient systems, including:
 
 Resilient systems are important in a variety of contexts, including critical infrastructure, military operations, and commercial enterprises, where the ability to maintain operation in the face of adverse conditions is essential.
 
-# Consistent System <a name="consistent"></a>
+# Consistent System
 
 A consistent system is one that operates in a predictable and reliable manner, producing the same results for a given set of inputs regardless of when or how those inputs are provided.
 
@@ -131,7 +131,7 @@ There are several concepts that can be applied when setting up a consistent syst
 
 * `Use version control and documentation`: Using version control and documentation can help to ensure that changes to the system are tracked and understood, which can help to maintain consistency over time.
 
-# Reliable System <a name="reliable"></a>
+# Reliable System 
 
 In the context of systems design, a reliable system is one that can be trusted to perform its intended functions correctly and consistently. A reliable system should be able to handle a variety of inputs and workloads, and should produce accurate and consistent results. It should also be able to withstand failures or disruptions, and should be able to recover from them in a controlled and predictable manner.
 
@@ -157,7 +157,7 @@ Consistency is an important property of any system, as it allows users to trust 
 
 While consistency is a key factor in determining the reliability of a system, it is not the only factor. A system can be consistent, but not necessarily reliable, if it produces incorrect or inconsistent results. On the other hand, a reliable system should also be consistent, as it should produce the same results for a given set of inputs.
 
-# Master-Slave Architecture <a name='master-slave'></a>
+# Master-Slave Architecture 
 
 In a master-slave architecture, one machine or server (the master) is responsible for controlling and coordinating the work of one or more other machines or servers (the slaves). The master and slave systems are typically connected in a network, and the slaves are responsible for executing tasks and processing data as directed by the master.
 
@@ -174,7 +174,7 @@ Master-slave architectures can provide several benefits, including:
 However, there are also some potential drawbacks to using a master-slave architecture. For example, the system may be more vulnerable to failure if the master machine goes down, and it can be more complex to design and manage a system with multiple machines.
 
 
-# Microservices <a name="microservices"></a>
+# Microservices 
 
 A microservices architecture is a type of distributed system.
 
@@ -182,7 +182,7 @@ In a microservices architecture, a system is broken down into a collection of sm
 
 Because a microservices architecture consists of multiple, independent services that communicate over a network, it is considered to be a type of distributed system. Like other distributed systems, microservices architectures are designed to be decentralized, scalable, and fault tolerant, and they often provide benefits such as increased flexibility and the ability to more easily evolve and update individual components of the system.
 
-# Monolith VS Microservices  <a name="monolith-vs-microservices"></a>
+# Monolith VS Microservices 
 
 ## Monolith
   * All fonctionnalities of the app in one program
@@ -204,7 +204,7 @@ Because a microservices architecture consists of multiple, independent services 
   * `+` Working in parallel
   * `-` Need skilled architects
   
-# Load Balancing <a name="load-balancing"></a>
+# Load Balancing 
 
 ## Definition
 Load balancing is the process of distributing network traffic across multiple servers or devices to ensure that no single device is overwhelmed by the traffic. 
@@ -257,7 +257,7 @@ Here are a few more examples of load balancing algorithms:
 
 6. `Difficulty in monitoring and debugging`: Load balancing can make it more difficult to monitor and debug issues within a system, as requests may be distributed across multiple resources and it may be difficult to identify the source of problems.
 
-# Sharding <a name="sharding"></a>
+# Sharding 
 
 ## Defintion
 

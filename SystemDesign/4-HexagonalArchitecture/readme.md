@@ -2,13 +2,17 @@
 
 # Table of contents
 - [Table of contents](#table-of-contents)
-- [Hexagonal Architecture ](#hexagonal-architecture-)
+- [Hexagonal Architecture](#hexagonal-architecture)
+  - [Definition](#definition)
+  - [In distributed system](#in-distributed-system)
+  - [Compared to Microservices](#compared-to-microservices)
 - [Dependency Injection](#dependency-injection)
-- [Inversion Of Controls ](#inversion-of-controls-)
+- [Inversion Of Controls](#inversion-of-controls)
 
 
-# Hexagonal Architecture <a name='hexagonal-architecture'></a>
+# Hexagonal Architecture 
 
+## Definition
 Hexagonal architecture, also known as the `Ports and Adapters` architecture, is a software design pattern that aims to separate the concerns of different parts of an application, making it more flexible and easier to maintain. It was first introduced by Alistair Cockburn in his 2005 book "Writing Effective Use Cases."
 
 The key idea behind hexagonal architecture is to structure the application around a central domain model, which represents the core business logic of the system. This model is surrounded by a set of interfaces, called "ports," which define how the model can be interacted with. The ports are then implemented by a set of adapters, which provide the actual implementation of the interactions.
@@ -26,6 +30,25 @@ In short, Hexagonal Architecture is a software architecture pattern that:
 * allow easy modification of the implementation of certain parts of the application
 * promotes the use of dependency injection.
 
+## In distributed system
+
+Hexagonal architecture, also known as "ports and adapters" or "onion architecture," is a software design pattern that is used to structure the components of a software system in a way that separates the concerns of the application's external dependencies from its core functionality. This allows the application to be more easily tested and maintained, and makes it more resilient to changes in its external environment.
+
+While hexagonal architecture is not specifically tied to distributed systems, it can be used as part of the design of a distributed system. In a distributed system, the core functionality of an application is typically spread across multiple systems or devices, and communication between these systems can be complex. By using hexagonal architecture, the external dependencies of each system or device can be clearly defined and managed, making it easier to handle communication and coordination between the different parts of the system. Additionally, hexagonal architecture can make it easier to add or remove systems or devices from the system, and can help to ensure that the system as a whole is more robust and fault-tolerant.
+
+It's worth noting that hexagonal architecture is not a solution for all problems, there are scenarios where other architectures like microservices or event-driven architecture could be more appropriate. But it is a solid design pattern that can make the application more loosely coupled and independent from the infrastructure, making it a good fit for the distributed systems.
+
+## Compared to Microservices
+
+Hexagonal architecture and microservices architecture are both software design patterns, but they address different concerns and are used in different contexts.
+
+Hexagonal architecture is a pattern for structuring the components of a software system in a way that separates the concerns of the application's external dependencies from its core functionality. This makes the application more easily tested and maintained, and helps to ensure that it is more resilient to changes in its external environment.
+
+On the other hand, microservices architecture is a way of designing a system by breaking it down into a set of independent, autonomous services that communicate with each other over well-defined interfaces. Each service is responsible for a specific business capability, and is designed to be small, focused, and easy to deploy, test, and scale.
+
+While microservices architecture is primarily focused on the decomposition of a system into smaller, independently deployable services and how they communicate with each other, Hexagonal Architecture is focused on separating the application from its dependencies, so they can be easily replaced, tested or mocked out.
+
+That said, there is some overlap between the two patterns, and they can be used together in a single system. For example, a microservices architecture can use hexagonal architecture to structure the components of each individual service, which will allow them to be more easily tested and maintained. Similarly, a hexagonal architecture can use microservices architecture for deploying and scaling the system in the cloud infrastructure for example
 
 # Dependency Injection
 
@@ -53,7 +76,7 @@ In short, Dependency injection is a design pattern and practice to:
 * promote the use of a dependency injection framework.
 
 
-# Inversion Of Controls <a name="inversion-of-controls"></a>
+# Inversion Of Controls 
 
 `Inversion of Control (IoC)` is a software design principle that refers to a component that is being controlled by an external entity, rather than by itself. In other words, the flow of control of a system is inverted, so that instead of the component controlling the flow of the program, the program controls the flow of the component.
 
