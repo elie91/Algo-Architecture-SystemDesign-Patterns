@@ -14,16 +14,11 @@
 - [Monolith VS Microservices](#monolith-vs-microservices)
   - [Monolith](#monolith)
   - [Microservices](#microservices-1)
-- [Load Balancing](#load-balancing)
-  - [Definition](#definition)
-  - [Algorithms](#algorithms)
-  - [Benefits](#benefits)
-  - [Issues](#issues)
 - [Sharding](#sharding)
   - [Defintion](#defintion)
   - [Steps](#steps)
-  - [Benefits](#benefits-1)
-  - [Issues](#issues-1)
+  - [Benefits](#benefits)
+  - [Issues](#issues)
 
 
 # System Design
@@ -204,58 +199,6 @@ Because a microservices architecture consists of multiple, independent services 
   * `+` Working in parallel
   * `-` Need skilled architects
   
-# Load Balancing 
-
-## Definition
-Load balancing is the process of distributing network traffic across multiple servers or devices to ensure that no single device is overwhelmed by the traffic. 
-
-The goal of load balancing is to maximize the throughput, minimize the response time, and avoid overloading any of the servers or devices in the system. This can be achieved by using load balancing algorithms that determine the best server or device to handle a request based on various factors such as the current load on the servers or devices, the capacity of the servers or devices, and the location of the client making the request. 
-
-Load balancing can be performed at different layers of the network stack, such as at the network layer, transport layer, or application layer, depending on the requirements of the system.
-
-## Algorithms
-
-One example of a load balancing algorithm in JavaScript is a `round-robin` algorithm. A round-robin algorithm distributes requests in a cyclical manner, such that each server or device in the system receives an equal number of requests over time.
-
-Here are a few more examples of load balancing algorithms:
-
-* `Least connections`: This algorithm routes requests to the server or device with the fewest number of active connections. This can help to evenly distribute the load across the servers and reduce the risk of overloading any single server.
-
-* `Weighted round-robin`: This algorithm is similar to the round-robin algorithm, but it allows you to assign weights to each server or device to indicate their relative capacity or capabilities. Requests are then distributed in proportion to the weights assigned to each server.
-
-* `Least response time`: This algorithm routes requests to the server or device with the lowest average response time. This can help to ensure that requests are handled as efficiently as possible and that users experience the fastest possible response times.
-
-* `IP hash`: This algorithm routes requests based on the hash value of the client's IP address. This can help to ensure that requests from the same client are always sent to the same server, which can be useful for maintaining session state or other client-specific data.
-
-* `Random`: This algorithm randomly selects a server or device to handle each request. This can be useful in situations where the servers or devices have roughly the same capacity and there is no need to explicitly balance the load.
-
-## Benefits
-
- It can have several benefits, including:
-
-1. `Improved performance`: By distributing workloads across multiple resources, load balancing can help to reduce the strain on any single resource and improve the overall performance of the system.
-
-2. `Increased reliability`: By using multiple resources to handle requests, load balancing can increase the overall reliability of the system. If one resource becomes unavailable, the workload can be shifted to other resources to ensure that the system remains operational.
-
-3. `Better resource utilization`: Load balancing can help to ensure that all available resources are used efficiently, resulting in better resource utilization and potentially lower costs.
-
-4. `Flexibility`: Load balancing can make it easier to scale a system up or down to meet changing demand, as workloads can be easily redistributed across resources.
-
-5. `High availability`: Load balancing can help to ensure that a system remains available even if one or more of the underlying resources fail, as requests can be redirected to other resources.
-
-## Issues
-
-1. `Complexity`: Implementing load balancing can add complexity to a system, as it requires the use of additional software or hardware to distribute workloads and manage the allocation of resources.
-
-2. `Overhead`: Load balancing introduces additional overhead, as it requires the use of additional resources to manage the distribution of workloads. This can result in reduced performance in some cases.
-
-3. `Cost`: Depending on the scale of the system and the load balancing solution being used, the cost of implementing load balancing can be significant.
-
-4. `Single points of failure`: If the load balancing solution itself becomes unavailable, it can create a single point of failure that affects the entire system.
-
-5. `Compatibility issues`: In some cases, load balancing solutions may not be compatible with certain types of software or hardware, which can limit their use.
-
-6. `Difficulty in monitoring and debugging`: Load balancing can make it more difficult to monitor and debug issues within a system, as requests may be distributed across multiple resources and it may be difficult to identify the source of problems.
 
 # Sharding 
 
