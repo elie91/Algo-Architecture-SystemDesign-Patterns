@@ -109,7 +109,7 @@ An API Gateway can also perform other functions such as:
 * Security : handling security requirements like authentication and authorization
 * Translation: translate incoming request to the target service format
 * Caching : caching commonly-used data to reduce the number of requests to the backend services.
-* 
+  
 However, an API Gateway can also include load balancing capabilities, in order to distribute the incoming requests to multiple back-end services based on certain criteria such as the URL of the request or the amount of load on the service.
 
 In a `microservices` architecture, it's common to have both an API Gateway and a Load Balancer. The API Gateway acts as a single entry point for external clients, while the load balancer distributes incoming requests to multiple instances of a microservice to ensure that it can handle the traffic.
